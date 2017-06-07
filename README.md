@@ -1,2 +1,2 @@
 # MongoDB-Generic-Repository
-Generic Repository pattern using MongoDB as the backing store.
+.NET Core Generic Repository pattern using MongoDB as the backing store.
