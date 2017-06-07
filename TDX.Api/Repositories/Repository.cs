@@ -19,7 +19,7 @@ namespace TDX.Api.Repositories
 
         public async Task<DeleteResult> Delete(string id)
         {
-			try
+		    try
 			{
 				return await collection.DeleteOneAsync(
 					 Builders<T>.Filter.Eq(x => x.Id, id));
@@ -122,4 +122,4 @@ namespace TDX.Api.Repositories
 			}
 		}
     }
-} 
+}
