@@ -37,4 +37,4 @@ namespace TDX.Api.Models
 		[JsonProperty("isActive")]
 		public bool IsActive { get; set; } = true;
 	}
-}
+} 
