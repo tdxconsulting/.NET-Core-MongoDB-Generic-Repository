@@ -1,0 +1,15 @@
+/Users/TDX1/Documents/GitHub/MongoDB-Generic-Repository/TDX.Api.Tests/bin/Debug/netcoreapp1.1/xunit.runner.visualstudio.dotnetcore.testadapter.dll
+/Users/TDX1/Documents/GitHub/MongoDB-Generic-Repository/TDX.Api.Tests/bin/Debug/netcoreapp1.1/xunit.runner.utility.netstandard15.dll
+/Users/TDX1/Documents/GitHub/MongoDB-Generic-Repository/TDX.Api.Tests/bin/Debug/netcoreapp1.1/xunit.runner.reporters.netstandard15.dll
+/Users/TDX1/Documents/GitHub/MongoDB-Generic-Repository/TDX.Api.Tests/bin/Debug/netcoreapp1.1/TDX.Api.Tests.deps.json
+/Users/TDX1/Documents/GitHub/MongoDB-Generic-Repository/TDX.Api.Tests/bin/Debug/netcoreapp1.1/TDX.Api.Tests.runtimeconfig.json
+/Users/TDX1/Documents/GitHub/MongoDB-Generic-Repository/TDX.Api.Tests/bin/Debug/netcoreapp1.1/TDX.Api.Tests.runtimeconfig.dev.json
+/Users/TDX1/Documents/GitHub/MongoDB-Generic-Repository/TDX.Api.Tests/bin/Debug/netcoreapp1.1/TDX.Api.Tests.dll
+/Users/TDX1/Documents/GitHub/MongoDB-Generic-Repository/TDX.Api.Tests/bin/Debug/netcoreapp1.1/TDX.Api.Tests.pdb
+/Users/TDX1/Documents/GitHub/MongoDB-Generic-Repository/TDX.Api.Tests/bin/Debug/netcoreapp1.1/TDX.Api.dll
+/Users/TDX1/Documents/GitHub/MongoDB-Generic-Repository/TDX.Api.Tests/bin/Debug/netcoreapp1.1/TDX.Api.pdb
+/Users/TDX1/Documents/GitHub/MongoDB-Generic-Repository/TDX.Api.Tests/obj/Debug/netcoreapp1.1/TDX.Api.Tests.csprojResolveAssemblyReference.cache
+/Users/TDX1/Documents/GitHub/MongoDB-Generic-Repository/TDX.Api.Tests/obj/Debug/netcoreapp1.1/TDX.Api.Tests.csproj.CoreCompileInputs.cache
+/Users/TDX1/Documents/GitHub/MongoDB-Generic-Repository/TDX.Api.Tests/obj/Debug/netcoreapp1.1/TDX.Api.Tests.AssemblyInfo.cs
+/Users/TDX1/Documents/GitHub/MongoDB-Generic-Repository/TDX.Api.Tests/obj/Debug/netcoreapp1.1/TDX.Api.Tests.dll
+/Users/TDX1/Documents/GitHub/MongoDB-Generic-Repository/TDX.Api.Tests/obj/Debug/netcoreapp1.1/TDX.Api.Tests.pdb

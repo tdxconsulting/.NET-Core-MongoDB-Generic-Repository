@@ -1,0 +1,13 @@
+﻿<Properties StartupConfiguration="{CB7D5CDB-F46E-469D-8615-FAA8B81A7468}|Default">
+  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.TDX.Api PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <DisabledProjects>
+    <String>CTS.API.Tests/TDX.Api.Tests.csproj</String>
+  </DisabledProjects>
+</Properties>
