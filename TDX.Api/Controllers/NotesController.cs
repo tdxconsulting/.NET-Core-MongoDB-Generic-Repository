@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using TDX.Api.Models;
 using TDX.Api.Services;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections;
 
 namespace TDX.Api.Controllers
 {
@@ -13,5 +14,12 @@ namespace TDX.Api.Controllers
         {
             data = new NoteService();
         }
+
+		// GET: api/items/search?text=abc&offset=0&limit=20
+		[HttpGet("search")]
+        public async Task<IEnumerable<Note>> Search([FromQuery] NoteSearchCriteria criteria)
+		{
+			return await data.Search(criteria);
+		}
     }
 }

@@ -18,7 +18,7 @@ namespace TDX.Api.Tests.FakeData
             notes = new NoteService();
         }
 
-		[Fact]
+		//[Fact]
 		public async void CreateNote()
 		{
             var note = DataUtility.CreateNote();

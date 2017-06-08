@@ -11,6 +11,11 @@ namespace TDX.Api.Repositories
         protected readonly MongoDbContext context;
         protected IMongoCollection<T> collection;
 
+		public IMongoCollection<T> Collection
+		{
+			get { return collection; }
+		}
+
         public Repository(string collectionName)
         {
             context = new MongoDbContext(null);
@@ -30,17 +35,27 @@ namespace TDX.Api.Repositories
 			}
         }
 
-        public async Task<IEnumerable<T>> Get(int offset = 0, int limit = 50)
-        {
+		public async Task<IEnumerable<T>> Search(ISearchCriteria criteria = null, FilterDefinition<T> filter = null)
+		{
+            if (criteria == null)
+                criteria = new SearchCriteria();
+            
+			if (filter == null)
+				filter = Builders<T>.Filter.Where(_ => true);
+
 			try
 			{
-				return await collection.Find(_ => true).ToListAsync();
+				return await collection
+					.Find(filter)
+					.Skip(criteria.Offset)
+					.Limit(criteria.Limit)
+					.ToListAsync();
 			}
 			catch (Exception ex)
 			{
 				throw ex;
 			}
-        }
+		}
 
         public async Task<T> Get(string id)
 		{

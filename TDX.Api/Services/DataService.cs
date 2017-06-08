@@ -7,18 +7,20 @@ using MongoDB.Driver;
 
 namespace TDX.Api.Services
 {
-	public class DataService<T> : IDataService<T> where T : class
+	public abstract class DataService<T> : IDataService<T> where T : class
 	{
-		protected IRepository<T> repo = null;
+		protected IRepository<T> repo;
 
 		public async Task<DeleteResult> Delete(string id)
 		{
 			return await repo.Delete(id);
 		}
 
-		public async Task<IEnumerable<T>> Get(int offset = 0, int limit = 50)
+		public async Task<IEnumerable<T>> Search(ISearchCriteria criteria = null)
 		{
-			return await repo.Get(offset, limit);
+			var filter = CreateFilterDefinition(criteria);
+
+			return await repo.Search(criteria, filter);
 		}
 
 		public async Task<T> Get(string id)
@@ -45,5 +47,7 @@ namespace TDX.Api.Services
 		{
 			return await repo.Update(model);
 		}
+
+        protected abstract FilterDefinition<T> CreateFilterDefinition(ISearchCriteria criteria);
 	}
 }

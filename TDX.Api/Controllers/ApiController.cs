@@ -11,14 +11,14 @@ namespace TDX.Api.Controllers
 	[Produces("application/json")]
     public class ApiController<T> : Controller where T : class, IModel
     {
-        protected IDataService<T> data = null;
+        protected IDataService<T> data;
 
         // GET: api/items
         [HttpGet]
-        public async Task<IEnumerable<T>> Get()
+		public async Task<IEnumerable<T>> Search()
         {
-            return await data.Get();
-        }
+			return await data.Search(null);
+		}
 
 		// GET api/items/593048b58d9f120eca1b001a
 		[HttpGet("{id}")]

@@ -13,5 +13,19 @@ namespace TDX.Api.Services
 		{
 			repo = new Repository<Note>("Notes");
 		}
+
+		protected override FilterDefinition<Note> CreateFilterDefinition(ISearchCriteria criteria)
+		{
+            if (criteria == null)
+                return null;
+
+			var c = criteria as NoteSearchCriteria;
+
+            Console.WriteLine(c.Text);
+
+			var filter = Builders<Note>.Filter.Where(n => n.Text.Contains(c.Text.Trim()));
+
+            return filter;
+		}
 	}
 }
