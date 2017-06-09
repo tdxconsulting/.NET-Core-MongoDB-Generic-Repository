@@ -5,6 +5,8 @@ namespace TDX.Api.Models
     {
         string Id { get; set; }
 
+        string ParentId { get; set; }
+
         DateTime Created { get; set; }
 
         string CreatedBy { get; set; }

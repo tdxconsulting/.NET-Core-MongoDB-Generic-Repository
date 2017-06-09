@@ -10,6 +10,7 @@ namespace TDX.Api.Repositories
 		IMongoCollection<T> Collection { get; }
 		Task<IEnumerable<T>> Search(ISearchCriteria criteria, FilterDefinition<T> filter);
 		Task<T> Get(string id);
+        Task<T> GetByParentId(string id);
 		Task<string> Insert(T model);
 		Task<ReplaceOneResult> Update(T model);
 		Task<DeleteResult> Delete(string id);

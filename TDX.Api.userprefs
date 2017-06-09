@@ -1,5 +1,17 @@
 ﻿<Properties StartupConfiguration="{CB7D5CDB-F46E-469D-8615-FAA8B81A7468}|Default">
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="TDX.Api/Services/NoteService.cs">
+    <Files>
+      <File FileName="TDX.Api/Controllers/NotesController.cs" Line="1" Column="1" />
+      <File FileName="TDX.Api/Models/ModelBase.cs" Line="1" Column="1" />
+      <File FileName="TDX.Api/Repositories/Interfaces/IRepository.cs" Line="20" Column="2" />
+      <File FileName="TDX.Api/Repositories/Repository.cs" Line="90" Column="4" />
+      <File FileName="TDX.Api/Models/Interfaces/IModel.cs" Line="16" Column="39" />
+      <File FileName="TDX.Api/Services/Interfaces/IDataService.cs" Line="21" Column="1" />
+      <File FileName="TDX.Api/Services/Interfaces/ISearchable.cs" Line="14" Column="2" />
+      <File FileName="TDX.Api/Services/DataService.cs" Line="26" Column="40" />
+      <File FileName="TDX.Api/Services/NoteService.cs" Line="40" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.TDX.Api PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

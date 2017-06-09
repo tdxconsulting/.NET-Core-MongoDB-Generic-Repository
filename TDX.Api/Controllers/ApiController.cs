@@ -15,10 +15,10 @@ namespace TDX.Api.Controllers
 
         // GET: api/items
         [HttpGet]
-		public async Task<IEnumerable<T>> Search()
+		public async Task<IEnumerable<T>> Search([FromBody] ISearchCriteria criteria)
         {
-			return await data.Search(null);
-		}
+            return await data.Search(criteria);
+        }
 
 		// GET api/items/593048b58d9f120eca1b001a
 		[HttpGet("{id}")]
@@ -26,6 +26,13 @@ namespace TDX.Api.Controllers
         {
             return await data.Get(id);
         }
+
+        // GET api/items/parent/593048b58d9f120eca1b001a
+		[HttpGet("parent/{id}")]
+		public async Task<T> GetByParentId(string id)
+		{
+			return await data.GetByParentId(id);
+		}
 
         // POST api/items
         [HttpPost]

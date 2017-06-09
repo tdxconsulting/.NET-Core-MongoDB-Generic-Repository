@@ -16,16 +16,14 @@ namespace TDX.Api.Services
 			return await repo.Delete(id);
 		}
 
-		public async Task<IEnumerable<T>> Search(ISearchCriteria criteria = null)
-		{
-			var filter = CreateFilterDefinition(criteria);
-
-			return await repo.Search(criteria, filter);
-		}
-
 		public async Task<T> Get(string id)
 		{
 			return await repo.Get(id);
+		}
+
+		public async Task<T> GetByParentId(string id)
+		{
+			return await repo.GetByParentId(id);
 		}
 
 		public async Task<string> Insert(T model)
@@ -48,6 +46,6 @@ namespace TDX.Api.Services
 			return await repo.Update(model);
 		}
 
-        protected abstract FilterDefinition<T> CreateFilterDefinition(ISearchCriteria criteria);
+        public abstract Task<IEnumerable<T>> Search(ISearchCriteria criteria);
 	}
 }

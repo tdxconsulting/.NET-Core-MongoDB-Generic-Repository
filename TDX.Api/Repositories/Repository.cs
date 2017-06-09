@@ -37,11 +37,11 @@ namespace TDX.Api.Repositories
 
 		public async Task<IEnumerable<T>> Search(ISearchCriteria criteria = null, FilterDefinition<T> filter = null)
 		{
-            if (criteria == null)
-                criteria = new SearchCriteria();
-            
 			if (filter == null)
-				filter = Builders<T>.Filter.Where(_ => true);
+				return null;
+
+			if (criteria == null)
+				criteria = new SearchCriteria();
 
 			try
 			{
@@ -60,6 +60,22 @@ namespace TDX.Api.Repositories
         public async Task<T> Get(string id)
 		{
 			var filter = Builders<T>.Filter.Eq(x => x.Id, id);
+
+			try
+			{
+				return await collection
+								.Find(filter)
+								.FirstOrDefaultAsync();
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
+		}
+
+		public async Task<T> GetByParentId(string id)
+		{
+			var filter = Builders<T>.Filter.Eq(x => x.ParentId, id);
 
 			try
 			{

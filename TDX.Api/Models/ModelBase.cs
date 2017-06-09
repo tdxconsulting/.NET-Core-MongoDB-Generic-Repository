@@ -13,6 +13,13 @@ namespace TDX.Api.Models
         [JsonProperty("id")]
 		public string Id { get; set; }
 
+        /// <summary>
+        /// Gets or sets the parent identifier, providing support for optional hierarchies.
+        /// </summary>
+        /// <value>The parent identifier.</value>
+		[JsonProperty("parentId")]
+		public string ParentId { get; set; }
+
         [JsonProperty("created")]
 		public DateTime Created { get; set; }
 
