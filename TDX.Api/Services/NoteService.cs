@@ -9,9 +9,9 @@ namespace TDX.Api.Services
 {
 	public class NoteService : DataService<Note>, ISearchable<Note>
 	{
-		public NoteService()
+		public NoteService(IRepository<Note> repository)
 		{
-			repo = new Repository<Note>("Notes");
+			repo = repository;
 		}
 
 		public override async Task<IEnumerable<Note>> Search(ISearchCriteria criteria = null)

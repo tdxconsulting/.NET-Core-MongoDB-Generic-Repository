@@ -10,10 +10,10 @@ namespace TDX.Api.Controllers
 {
     public class NotesController : ApiController<Note>
     {
-        public NotesController()
-        {
-            data = new NoteService();
-        }
+		public NotesController(NoteService svc)
+		{
+			data = svc;
+		}
 
 		// GET: api/items/search?text=abc&offset=0&limit=20
 		[HttpGet("search")]

@@ -9,20 +9,20 @@ using System.Linq;
 
 namespace TDX.Api.Tests.FakeData
 {
-    public class DataGenerator
-    {
-        private readonly NoteService notes;
+	public class DataGenerator : IClassFixture<ServiceFixture>
+	{
+		private readonly ServiceFixture fixture;
 
-        public DataGenerator()
-        {
-            notes = new NoteService();
-        }
+		public DataGenerator(ServiceFixture svcs)
+		{
+			fixture = svcs;
+		}
 
-		//[Fact]
+		[Fact]
 		public async void CreateNote()
 		{
             var note = DataUtility.CreateNote();
-            await notes.Insert(note);
+            await fixture.Notes.Insert(note);
             Console.WriteLine(JsonConvert.SerializeObject(note));
         }
     }

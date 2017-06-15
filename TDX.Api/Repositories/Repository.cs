@@ -16,10 +16,10 @@ namespace TDX.Api.Repositories
 			get { return collection; }
 		}
 
-        public Repository(string collectionName)
-        {
-            context = new MongoDbContext(null);
-            collection = context.Database.GetCollection<T>(collectionName);
+		public Repository(MongoDbContext ctx)
+		{
+			context = ctx;
+			collection = context.Database.GetCollection<T>(context.GetCollectionName(typeof(T)));
         }
 
         public async Task<DeleteResult> Delete(string id)
