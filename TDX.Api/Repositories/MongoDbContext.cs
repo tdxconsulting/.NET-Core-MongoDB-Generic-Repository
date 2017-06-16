@@ -9,27 +9,22 @@ namespace TDX.Api.Repositories
 {
     public class MongoDbContext
     {
-		public IMongoDatabase Database { get; private set; }
 		private List<KeyValuePair<Type, string>> collections;
 
-		public MongoDbContext(IOptions<MongoDbSettings> settings = null)
+        public IMongoDatabase Database { get; private set; }
+
+		public MongoDbContext(IOptions<AppSettings> config)
 		{
-			Init(settings);
+            Init(config.Value.MongoDbSettings);
 		}
 
-		private void Init(IOptions<MongoDbSettings> settings)
+		private void Init(MongoDbSettings settings)
 		{
-			//TODO: read from config
-			//var client = new MongoClient(settings.Value.ConnectionString);
-			//if (client != null)
-			//    Database = client.GetDatabase(settings.Value.Database);
-
-			var client = new MongoClient("mongodb://localhost:27017");
+			var client = new MongoClient(settings.ConnectionString);
 			if (client != null)
-				Database = client.GetDatabase("TDX-API");
+			    Database = client.GetDatabase(settings.Database);
 
 			collections = new List<KeyValuePair<Type, string>>();
-
 			collections.Add(new KeyValuePair<Type, string>(typeof(Note), "Notes"));
 		}
 

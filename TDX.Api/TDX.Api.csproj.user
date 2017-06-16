@@ -6,5 +6,6 @@
       <Variable name="ASPNETCORE_ENVIRONMENT" value="Development" xmlns="" />
     </EnvironmentVariables>
     <ApplicationURL>http://localhost:56599</ApplicationURL>
+    <LaunchUrl></LaunchUrl>
   </PropertyGroup>
 </Project>
