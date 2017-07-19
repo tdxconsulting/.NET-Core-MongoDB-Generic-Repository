@@ -35,6 +35,7 @@ namespace TDX.Api
 			services.Configure<AppSettings>(Configuration);
 
 			services.AddSingleton<MongoDbContext>();
+            services.AddSingleton<MongoDbCollectionRegistry>();
 			services.AddTransient(typeof(IRepository<>), typeof(Repository<>));
 			services.AddSingleton<NoteService>();
 

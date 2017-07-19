@@ -8,9 +8,10 @@ namespace TDX.Api.Services
 {
     public interface IDataService<T> where T : class
     {
+        string CollectionName { get; }
 		Task<IEnumerable<T>> Search(ISearchCriteria criteria);
 		Task<T> Get(string id);
-        Task<T> GetByParentId(string id);
+        Task<IEnumerable<T>> GetByParentId(string id);
 		Task<string> Insert(T model);
 		Task<ReplaceOneResult> Update(T model);
 		Task<DeleteResult> Delete(string id);

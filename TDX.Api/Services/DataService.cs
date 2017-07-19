@@ -11,6 +11,8 @@ namespace TDX.Api.Services
 	{
 		protected IRepository<T> repo;
 
+        public string CollectionName { get { return repo.CollectionName; } }
+
 		public async Task<DeleteResult> Delete(string id)
 		{
 			return await repo.Delete(id);
@@ -21,7 +23,7 @@ namespace TDX.Api.Services
 			return await repo.Get(id);
 		}
 
-		public async Task<T> GetByParentId(string id)
+		public async Task<IEnumerable<T>> GetByParentId(string id)
 		{
 			return await repo.GetByParentId(id);
 		}

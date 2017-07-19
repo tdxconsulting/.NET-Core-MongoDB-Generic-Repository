@@ -8,9 +8,10 @@ namespace TDX.Api.Repositories
 	public interface IRepository<T> where T : class
 	{
 		IMongoCollection<T> Collection { get; }
+        string CollectionName { get; }
 		Task<IEnumerable<T>> Search(ISearchCriteria criteria, FilterDefinition<T> filter);
 		Task<T> Get(string id);
-        Task<T> GetByParentId(string id);
+        Task<IEnumerable<T>> GetByParentId(string id);
 		Task<string> Insert(T model);
 		Task<ReplaceOneResult> Update(T model);
 		Task<DeleteResult> Delete(string id);

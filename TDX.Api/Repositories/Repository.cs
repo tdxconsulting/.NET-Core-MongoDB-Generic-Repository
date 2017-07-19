@@ -16,6 +16,11 @@ namespace TDX.Api.Repositories
 			get { return collection; }
 		}
 
+		public string CollectionName
+		{
+			get { return context.GetCollectionName(typeof(T)); }
+		}
+
 		public Repository(MongoDbContext ctx)
 		{
 			context = ctx;
@@ -73,15 +78,16 @@ namespace TDX.Api.Repositories
 			}
 		}
 
-		public async Task<T> GetByParentId(string id)
+		// TODO: paging
+		public async Task<IEnumerable<T>> GetByParentId(string id)
 		{
-			var filter = Builders<T>.Filter.Eq(x => x.ParentId, id);
+			var filter = Builders<T>.Filter.Where(x => x.ParentId == id);
 
 			try
 			{
 				return await collection
 								.Find(filter)
-								.FirstOrDefaultAsync();
+								.ToListAsync();
 			}
 			catch (Exception ex)
 			{

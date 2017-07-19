@@ -9,28 +9,26 @@ namespace TDX.Api.Repositories
 {
     public class MongoDbContext
     {
-		private List<KeyValuePair<Type, string>> collections;
+		public IMongoDatabase Database { get; private set; }
 
-        public IMongoDatabase Database { get; private set; }
+		private MongoDbCollectionRegistry collections;
 
-		public MongoDbContext(IOptions<AppSettings> config)
+		public MongoDbContext(IOptions<AppSettings> config, MongoDbCollectionRegistry registry)
 		{
-            Init(config.Value.MongoDbSettings);
+			collections = registry;
+			Init(config.Value.MongoDbSettings);
 		}
 
 		private void Init(MongoDbSettings settings)
 		{
 			var client = new MongoClient(settings.ConnectionString);
 			if (client != null)
-			    Database = client.GetDatabase(settings.Database);
-
-			collections = new List<KeyValuePair<Type, string>>();
-			collections.Add(new KeyValuePair<Type, string>(typeof(Note), "Notes"));
+				Database = client.GetDatabase(settings.Database);
 		}
 
 		public string GetCollectionName(Type t)
 		{
-			return collections.Where(c => c.Key == t).FirstOrDefault().Value ?? string.Empty;
+			return collections.GetCollectionName(t);
 		}
     }
 }

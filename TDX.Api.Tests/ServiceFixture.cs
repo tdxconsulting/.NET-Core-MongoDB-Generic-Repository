@@ -21,7 +21,7 @@ namespace TDX.Api.Tests
                 }
             });
 
-            var ctx = new MongoDbContext(settings);
+            var ctx = new MongoDbContext(settings, new MongoDbCollectionRegistry());
 
             Notes = new NoteService(new Repository<Note>(ctx));
         }
