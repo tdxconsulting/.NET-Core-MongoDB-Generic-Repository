@@ -82,7 +82,7 @@ namespace TDX.Api.Controllers
 		public async Task<IActionResult> Patch(string id, [FromBody] JsonPatchDocument<T> patch)
 		{
 			var model = await data.Get(id);
-			patch.ApplyTo(model);               // TODO: refactor?
+			patch.ApplyTo(model);
 
 			var result = await data.Update(model);
 
