@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using TDX.Api.Documents;
 using TDX.Api.Models;
 using MongoDB.Driver;
 

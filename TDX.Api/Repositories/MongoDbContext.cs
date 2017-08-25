@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Options;
 using MongoDB.Driver;
+using TDX.Api.Documents;
 using TDX.Api.Models;
 using System.Collections.Generic;
 using System;

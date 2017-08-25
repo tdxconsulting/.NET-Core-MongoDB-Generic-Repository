@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using Xunit;
 using TDX.Api.Services;
+using TDX.Api.Documents;
 using TDX.Api.Models;
 using System.Threading.Tasks;
 using System.Collections.Generic;

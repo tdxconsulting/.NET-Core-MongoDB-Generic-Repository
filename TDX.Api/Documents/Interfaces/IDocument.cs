@@ -1,7 +1,7 @@
 ﻿using System;
-namespace TDX.Api.Models
+namespace TDX.Api.Documents
 {
-    public interface IModel
+    public interface IDocument
     {
         string Id { get; set; }
 

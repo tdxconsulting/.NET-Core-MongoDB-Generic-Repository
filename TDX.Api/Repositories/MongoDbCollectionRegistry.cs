@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Collections.Generic;
-using TDX.Api.Models;
+using TDX.Api.Documents;
 
 namespace TDX.Api.Repositories
 {
@@ -14,6 +14,7 @@ namespace TDX.Api.Repositories
         {
             collections = new List<KeyValuePair<Type, string>>();
             collections.Add(new KeyValuePair<Type, string>(typeof(Note), "Notes"));
+            collections.Add(new KeyValuePair<Type, string>(typeof(Widget), "Widgets"));
         }
 
         public string GetCollectionName(Type t)

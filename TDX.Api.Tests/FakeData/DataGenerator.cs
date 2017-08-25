@@ -2,7 +2,7 @@
 using Newtonsoft.Json;
 using Xunit;
 using TDX.Api.Services;
-using TDX.Api.Models;
+using TDX.Api.Documents;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,5 +25,13 @@ namespace TDX.Api.Tests.FakeData
             await fixture.Notes.Insert(note);
             Console.WriteLine(JsonConvert.SerializeObject(note));
         }
+
+		[Fact]
+		public async void CreateWidget()
+		{
+			var widget = DataUtility.CreateWidget();
+			await fixture.Widgets.Insert(widget);
+			Console.WriteLine(JsonConvert.SerializeObject(widget));
+		}
     }
 }

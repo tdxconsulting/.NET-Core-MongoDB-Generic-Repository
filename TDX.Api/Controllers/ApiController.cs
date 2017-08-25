@@ -1,17 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using TDX.Api.Models;
+using TDX.Api.Documents;
 using TDX.Api.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 using Microsoft.AspNetCore.JsonPatch;
+using TDX.Api.Models;
 
 namespace TDX.Api.Controllers
 {
     [Route("api/[controller]")]
 	[Produces("application/json")]
-    public class ApiController<T> : Controller where T : class, IModel
+    public class ApiController<T> : Controller where T : class, IDocument
     {
         protected IDataService<T> data;
 
@@ -82,7 +83,7 @@ namespace TDX.Api.Controllers
 		public async Task<IActionResult> Patch(string id, [FromBody] JsonPatchDocument<T> patch)
 		{
 			var model = await data.Get(id);
-			patch.ApplyTo(model);               // TODO: refactor?
+			patch.ApplyTo(model);
 
 			var result = await data.Update(model);
 

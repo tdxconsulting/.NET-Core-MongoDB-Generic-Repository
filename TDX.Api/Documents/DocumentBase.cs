@@ -3,10 +3,10 @@ using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using Newtonsoft.Json;
 
-namespace TDX.Api.Models
+namespace TDX.Api.Documents
 {
     [BsonDiscriminator(RootClass = true)]
-	public class ModelBase : IModel
+	public class DocumentBase : IDocument
 	{
 		[BsonId]
         [BsonRepresentation(BsonType.ObjectId)]

@@ -4,6 +4,7 @@
     <StartAction>Project</StartAction>
     <EnvironmentVariables>
       <Variable name="ASPNETCORE_ENVIRONMENT" value="Development" xmlns="" />
+      <Variable name="ASPNETCORE_ENVIRONMENT" value="Development" xmlns="" />
     </EnvironmentVariables>
     <ApplicationURL>http://localhost:56599</ApplicationURL>
     <LaunchUrl></LaunchUrl>

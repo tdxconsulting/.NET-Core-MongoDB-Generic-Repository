@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TDX.Api.Documents;
 using TDX.Api.Models;
 using TDX.Api.Repositories;
 using TDX.Api.Services;
@@ -38,6 +39,7 @@ namespace TDX.Api
             services.AddSingleton<MongoDbCollectionRegistry>();
 			services.AddTransient(typeof(IRepository<>), typeof(Repository<>));
 			services.AddSingleton<NoteService>();
+            services.AddSingleton<WidgetService>();
 
 			// Add framework services.
 			services.AddCors(options =>

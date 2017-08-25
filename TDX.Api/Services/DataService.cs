@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using TDX.Api.Documents;
 using TDX.Api.Models;
 using TDX.Api.Repositories;
 using MongoDB.Driver;
@@ -12,11 +13,6 @@ namespace TDX.Api.Services
 		protected IRepository<T> repo;
 
         public string CollectionName { get { return repo.CollectionName; } }
-
-		public async Task<DeleteResult> Delete(string id)
-		{
-			return await repo.Delete(id);
-		}
 
 		public async Task<T> Get(string id)
 		{
@@ -36,6 +32,11 @@ namespace TDX.Api.Services
 		public async Task<UpdateResult> SetActive(string id, bool isActive)
 		{
 			return await repo.SetActive(id, isActive);
+		}
+
+		public async Task<DeleteResult> Delete(string id)
+		{
+			return await repo.Delete(id);
 		}
 
 		public async Task<UpdateResult> SoftDelete(string id)
